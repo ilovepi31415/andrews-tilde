@@ -1,0 +1,5 @@
+.inch {
+    height: 1in;
+    box-sizing: border-box;
+    border: 3px solid red;
+}
