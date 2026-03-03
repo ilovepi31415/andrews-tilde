@@ -19,6 +19,10 @@ function AddChunk() {
             block.innerHTML += ` ${POIs[count]}`;
             console.log("woah it worked")
         }
+        if ((Math.random() * 4096) > 4095) {
+            block.classList.add("shiny");
+            console.log("shiny")
+        }
         container.appendChild(block);
         count++;
     }

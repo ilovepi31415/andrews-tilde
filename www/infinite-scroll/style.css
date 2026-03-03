@@ -2,3 +2,7 @@
     height: 1in;
     box-sizing: border-box;
 }
+
+.shiny {
+    background: linear-gradient(135deg, red 0%, orange 12%, yellow 25%, lime 37%, green 50%, cyan 62%, blue 75%, purple 87%, pink 100%);
+}
