@@ -11,7 +11,7 @@ const POIs = {
 }
 
 let distance = 0;
-let score = 0;
+let score = parseInt(localStorage.getItem("score")) || 0;
 function AddChunk() {
     for (let i = 0; i < 10; i++) {
         const block = document.createElement("div");
@@ -21,7 +21,7 @@ function AddChunk() {
             block.innerHTML += ` ${POIs[distance]}`;
             console.log("woah it worked")
         }
-        if ((Math.random() * 4096) > 4096) {
+        if ((Math.random() * 4096) > 4095) {
             block.classList.add("shiny", "clickable");
             console.log("shiny");
             block.addEventListener("click", () => {
@@ -39,10 +39,12 @@ function AddChunk() {
 
 function UpdateScore() {
     scoreBox.innerHTML = `Score: ${score}`;
+    localStorage.setItem("score", score);
 }
 
 
-AddChunk()
+AddChunk();
+UpdateScore();
 window.addEventListener("scroll", () => {
     if (
         document.documentElement.scrollTop +
