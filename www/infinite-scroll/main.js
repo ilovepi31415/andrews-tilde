@@ -42,8 +42,9 @@ function UpdateScore() {
     localStorage.setItem("score", score);
 }
 
-
-AddChunk();
+do {
+ AddChunk();
+} while (2 * document.documentElement.clientHeight > document.documentElement.scrollHeight);
 UpdateScore();
 window.addEventListener("scroll", () => {
     if (
