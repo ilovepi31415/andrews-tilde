@@ -1,4 +1,5 @@
 const container = document.getElementById("container");
+const scoreBox = document.getElementById("score-box")
 
 const POIs = {
     22: "Chandra Bahadur Dangi from Nepal was only 21.5 inches tall",
@@ -9,24 +10,37 @@ const POIs = {
     63360: "A full mile! I'm impressed"
 }
 
-let count = 0
+let distance = 0;
+let score = 0;
 function AddChunk() {
     for (let i = 0; i < 10; i++) {
         const block = document.createElement("div");
         block.className = "inch";
-        block.innerHTML = `${Math.floor(count / 12)}'${count % 12}"`;
-        if (Object.keys(POIs).includes(count.toString())) {
-            block.innerHTML += ` ${POIs[count]}`;
+        block.innerHTML = `${Math.floor(distance / 12)}'${distance % 12}"`;
+        if (Object.keys(POIs).includes(distance.toString())) {
+            block.innerHTML += ` ${POIs[distance]}`;
             console.log("woah it worked")
         }
-        if ((Math.random() * 4096) > 4095) {
-            block.classList.add("shiny");
-            console.log("shiny")
+        if ((Math.random() * 4096) > 4096) {
+            block.classList.add("shiny", "clickable");
+            console.log("shiny");
+            block.addEventListener("click", () => {
+                if (block.classList.contains("clickable")) {
+                    block.classList.remove("clickable")
+                    score++;
+                    UpdateScore();
+                }
+            });
         }
         container.appendChild(block);
-        count++;
+        distance++;
     }
 }
+
+function UpdateScore() {
+    scoreBox.innerHTML = `Score: ${score}`;
+}
+
 
 AddChunk()
 window.addEventListener("scroll", () => {

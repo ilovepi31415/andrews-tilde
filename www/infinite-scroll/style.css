@@ -6,3 +6,15 @@
 .shiny {
     background: linear-gradient(135deg, red 0%, orange 14%, yellow 28%, lime 42%, cyan 57%, blue 71%, purple 85%, pink 100%);
 }
+
+#score-box {
+    position: fixed;
+    right: 32px;
+    top: 32px;
+    z-index: 10;
+}
+
+.clickable {
+    cursor: pointer;
+    border: 3px solid gold;
+}
