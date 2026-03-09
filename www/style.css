@@ -2,12 +2,31 @@
 	font-family: "Comic Sans MS", sans-serif;
 }
 
+html {
+	background-image: url(images/90sBackground.jpg);
+	background-repeat: repeat;
+	background-size: 100%;
+}
+
+.title-bar {
+	background-color: black;
+	margin: 16px;
+	padding: 16px;
+}
+
 h1 {
-	color: blue;
+	color: cyan;
+	text-align: center;
+	margin: auto;
+}
+
+h2 {
+	text-align: center;
+	color:	rgba(255, 0, 255, .8);
 }
 
 p {
-	color: gray;
+	color: black;
 	text-align: center;
 }
 
@@ -30,6 +49,15 @@ p {
 	width: 250px;
 	height: 250px;
 	box-sizing: border-box;
+	/* background-color: rgba(0, 255, 255, .8); */
+}
+
+a:nth-child(2n) .tile {
+	background-color: rgba(255, 0, 255, .8);
+}
+
+a:nth-child(2n+1) .tile {
+	background-color: rgba(0, 255, 255, .8);
 }
 
 .tile img {
