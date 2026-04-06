@@ -35,6 +35,8 @@ p {
 	grid-template-columns: repeat(auto-fit, 250px);
 	justify-content: center;
 	gap: 16px;
+	margin: 16px;
+	margin-bottom: 64px;
 }
 
 .tile {
@@ -66,4 +68,15 @@ a:nth-child(2n+1) .tile {
 
 a.no-decoration {
 	text-decoration: none;
+}
+
+.account {
+	background-color: black;
+	color: rgba(0, 255, 255);
+	font-size: 24px;
+	padding: 16px;
+	width: fit-content;
+	position: fixed;
+	bottom: 24px;
+	right: 24px;
 }
