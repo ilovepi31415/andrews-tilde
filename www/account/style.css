@@ -1,4 +1,43 @@
+* {
+    font-family: "Comic Sans MS", sans-serif;
+}
+
 html {
     background-image: url(../images/WIP.jpg);
     background-size: 33%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    min-width: 50%;
+    aspect-ratio: 3 / 2;
+    background-color: cyan;
+    padding: 16px;
+    border: 3px solid black;
+}
+
+label {
+    width: 150px;
+}
+
+input {
+    border: 1px solid black;
+}
+
+button {
+    background-color: white;
+    border: 2px solid black;
+    padding: 8px;
+    cursor: pointer;
 }
