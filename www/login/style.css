@@ -3,8 +3,9 @@
 }
 
 html {
-    background-image: url(../images/WIP.jpg);
-    background-size: 33%;
+	background-image: url(../images/90sBackground.jpg);
+	background-repeat: repeat;
+	background-size: 100%;
 }
 
 body {
