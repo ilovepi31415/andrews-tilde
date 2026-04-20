@@ -1,6 +1,7 @@
 // HTML elements
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
+const formLogin = document.getElementById("login-form")
 const btnLogin = document.getElementById("login");
 const btnRegister = document.getElementById("register");
 const output = document.getElementById("output");
@@ -16,7 +17,9 @@ if (user) {
 }
 
 // Form Button onClick functions
-btnLogin.addEventListener("click", async () => {
+formLogin.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
   console.log(emailInput.value);
   const { data, error } = await supabase.auth.signInWithPassword({
     email: emailInput.value,
