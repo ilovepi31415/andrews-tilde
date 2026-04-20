@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Account</title>
+    <link rel="stylesheet" href="style.css">
     <script src="main.js" type="module" defer></script>
 </head>
 <body>
+    <div class="title-bar">
+			<h1>My Account</h1>
+	</div>
+    <div class="container" id="settings">
+        <form class="change-username">
+            <label for="change-username">Change/Set Username:</label>
+            <input type="text" name="change-username" id="change-username" required>
+            <button type="button" id="btn-username-change">Change</button>
+        </form>
+        <div>Current Username: <span id="current-username"></span></div>
+    </div>
+    <div id="statistics"></div>
     <button type="button" id="logout">Log Out</button>
 </body>
 </html>
