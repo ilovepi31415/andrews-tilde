@@ -5,12 +5,15 @@ const btnLogin = document.getElementById("login");
 const btnRegister = document.getElementById("register");
 const output = document.getElementById("output");
 
-const SUPABASE_URL = "https://mmofbreouukydwythggx.supabase.co";
-const SUPABASE_KEY = "sb_publishable_JP5pYPQqmFFPI7gkO05tBQ_U4-OmUiF";
+import { supabase } from "../supabase.js"
 
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+const { data: { user } } = await supabase.auth.getUser();
+if (user) {
+  console.log("logged in");
+  window.location.href = "../account";
+} else {
+  console.log("not logged in")
+}
 
 // Form Button onClick functions
 btnLogin.addEventListener("click", async () => {
@@ -23,6 +26,7 @@ btnLogin.addEventListener("click", async () => {
     console.error(error);
   } else {
     console.log(data);
+    window.location.href = "../account";
   }
 });
 
@@ -33,7 +37,7 @@ btnRegister.addEventListener("click", async () => {
   });
   if (error) {
     console.error(error);
-    break;
+    return;
   } else {
     console.log(data);
     
