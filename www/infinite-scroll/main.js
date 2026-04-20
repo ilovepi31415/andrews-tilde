@@ -12,6 +12,8 @@ const POIs = {
 
 let distance = 0;
 let score = parseInt(localStorage.getItem("score")) || 0;
+
+// Loads the infinite elements as the user scrolls
 function AddChunk() {
     for (let i = 0; i < 10; i++) {
         const block = document.createElement("div");
@@ -21,6 +23,8 @@ function AddChunk() {
             block.innerHTML += ` ${POIs[distance]}`;
             console.log("woah it worked")
         }
+
+        // Gives a chance to make a shiny for every element loaded
         if ((Math.random() * 4096) > 4095) {
             block.classList.add("shiny", "clickable");
             console.log("shiny");
@@ -37,15 +41,19 @@ function AddChunk() {
     }
 }
 
+// Increases the user's score 
 function UpdateScore() {
     scoreBox.innerHTML = `Score: ${score}`;
     localStorage.setItem("score", score);
 }
 
+// Initializes chunks to fill twice the entire height of the window 
 do {
  AddChunk();
 } while (2 * document.documentElement.clientHeight > document.documentElement.scrollHeight);
 UpdateScore();
+
+// Adds chunks if the user scrolls close to the bottom of the page
 window.addEventListener("scroll", () => {
     if (
         document.documentElement.scrollTop +

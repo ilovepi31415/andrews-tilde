@@ -8,6 +8,7 @@ const output = document.getElementById("output");
 
 import { supabase } from "../supabase.js"
 
+// Take user to account page if logged in
 const { data: { user } } = await supabase.auth.getUser();
 if (user) {
   console.log("logged in");
@@ -46,16 +47,3 @@ btnRegister.addEventListener("click", async () => {
     
   }
 });
-
-// Basic data fetching function
-async function getData() {
-  const { data, error } = await supabase.from("testing").select();
-
-  if (error) {
-    console.error(error);
-  } else {
-    console.log(data);
-  }
-}
-
-getData();
