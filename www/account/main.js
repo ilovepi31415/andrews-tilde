@@ -1,3 +1,4 @@
+const formUsername = document.getElementById("form-change-username");
 const inputUsername = document.getElementById("change-username");
 const btnUsernameChange = document.getElementById("btn-username-change");
 const btnLogout = document.getElementById("logout");
@@ -28,13 +29,14 @@ btnLogout.addEventListener("click", async () => {
 });
 
 // Checks if username is available and, if so, updates the username in the database
-btnUsernameChange.addEventListener("click", async () => {
+formUsername.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  
   if (inputUsername) {
     const { data, error } = await supabase.from("profiles").update({ username: inputUsername.value }).eq('id', user.id);
     if (error) {
       console.error("Update failed: ", error);
     } else {
-      console.log(data)
       inputUsername.value = ""
     }
   }
@@ -47,6 +49,7 @@ async function updateUsername() {
   if (error) {
     console.error("Update failed: ", error);
   } else {
+    console.log(data)
     currentUsername.innerText = data[0].username;
   }
 }
