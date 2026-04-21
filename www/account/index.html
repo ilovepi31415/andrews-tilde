@@ -11,13 +11,18 @@
     <div class="title-bar">
 			<h1>My Account</h1>
 	</div>
-    <div class="container" id="settings">
-        <form class="change-username" id="form-change-username">
-            <label for="change-username">Change/Set Username:</label>
-            <input type="text" name="change-username" id="change-username" required>
-            <button type="submit" id="btn-username-change">Change</button>
-        </form>
-        <div>Current Username: <span id="current-username"></span></div>
+    <div class="format horizonatal">
+        <div class="container" id="container-avatar">
+             <img src="../images/WIP.jpg" alt="" class="avatar">
+        </div>
+        <div class="container" id="container-settings">
+            <form class="change-username" id="form-change-username">
+                <label for="change-username">Change/Set Username:</label>
+                <input type="text" name="change-username" id="change-username" required>
+                <button type="submit" id="btn-username-change">Change</button>
+            </form>
+            <div>Current Username: <span id="current-username"></span></div>
+        </div>
     </div>
     <div id="statistics"></div>
     <button type="button" id="logout">Log Out</button>
